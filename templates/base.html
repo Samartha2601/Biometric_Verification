@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='stylesheets/style.css')}}">
+
+  <title>MDP</title>
+
+ 
+
+</head>
+
+<body>
+
+<!-- header section starts  -->
+<header class="header">
+
+<a href="#" class="logo"><i class="fas fa-magic"></i>Biometrics Verification</a>
+<div class="fas fa-bars"></div>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="{{url_for('login')}}">Login</a></li>
+    <li><a href="{{url_for('signup')}}">Sign Up</a></li>
+  </ul>
+</nav>
+
+</header>
+<!-- header section ends -->
+
+
+<!-- home section starts  -->
+<section id="home" class="home">
+
+<h1 class="banner">Multi Disciplinary Project</h1>
+<h3 class="slogan">Offline Biometrics Verification</h3>
+
+<div class="fas fa-cog nut1"></div>
+<div class="fas fa-cog nut2"></div>
+
+<input type="sumbit">
+
+
+</section>
+
+{% block content %}
+
+
+{% endblock %}
+<!-- home section ends -->
+
+<!--  about section starts  
+<section id="project" class="project">
+
+<h1 class="heading">Our Project</h1>
+
+<div class="row">
+  <div class="content">
+    <h3>Upload Image</p>
+    
+  <form action="/" method="post">
+    <label for="myfile">Select an image:</label>
+    <input type="file" id="myfile" name="myfile" accept="image/*"> 
+    <br>
+   
+    <br><br><br>
+    <button type="submit">submit</button>
+  </div>
+
+  <div class="image">
+    <img src="static/about.svg" alt="image">
+  </div>
+
+</div>
+
+
+</section>
+ about section ends  -->
+
+
+
+
+<!-- team section starts  -->
+
+<section id="team" class="team">
+
+<h1 class="heading">our team</h1>
+    
+  <div class="row">
+    
+    <div class="card">
+      <div class="image">
+        <img src="static/niranjan.jpg" alt="Niranjan">
+      </div>
+      <div class="info">
+        <h3>Niranjan Hegde</h3>
+        <span>ISE VI C</span>
+        <div class="icons">
+          <a href="https://www.linkedin.com/in/samartha-s-6b9b16197/" target="_blank" class="fab fa-linkedin-in"></a> 
+          <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="card">
+      <div class="image">
+        <img src="static/Samartha.jpg" alt="Samartha">
+      </div>
+      <div class="info">
+        <h3>Samartha S</h3>
+        <span>ISE V C</span>
+        <div class="icons">
+            <a href="https://www.linkedin.com/" target="_blank" class="fab fa-linkedin-in"></a> 
+            <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+    
+    
+</section>
+<!-- team section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+<h1>created by the two boys | &#169; all rights reserved.</h1>
+
+<div class="college">
+  <a href="#">B. M. S. College of Engineering</a>
+</div>
+
+</section>
+<!-- footer section ends -->
+
+
+<!-- jquery file link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/homejs.js"></script>
+
+  
+</body>
+</html>

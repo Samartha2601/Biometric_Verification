@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- about section starts   -->
+<section id="project" class="project">
+
+<h1 class="heading">Our Project</h1>
+
+<div class="row">
+  <div class="content">
+    <h3>Upload Image</p>
+    
+  <form action="/" method="post">
+    <label for="myfile">Select an image:</label>
+    <input type="file" id="myfile" name="myfile" accept="image/*"> 
+    <br>
+   
+    <br><br><br>
+    <button type="submit">submit</button>
+  </div>
+
+  <div class="image">
+    <img src="static/about.svg" alt="image">
+  </div>
+
+</div>
+
+
+</section>
+ <!-- about section ends  -->
+{% endblock %}
