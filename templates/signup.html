@@ -10,22 +10,22 @@
 <body>
     <div class="login-box">
         <h2>Sign Up</h2>
-        <form>
+        <form action="/signup" method="post">
           <div class="user-box">
-            <input type="text" name="username" required="">
+            <input type="text" name="username" id="username" required="">
             <label>Username</label>
           </div>
           <div class="user-box">
             <input type="password" name="password" required="">
             <label>Password</label>
           </div>
-          <a href="">
+          <button name="submit">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Submit
-          </a>
+          </button>
 
           <a class="btn2" href="{{url_for('login')}}">
             <span></span>

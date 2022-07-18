@@ -24,10 +24,12 @@
 <div class="fas fa-bars"></div>
 
 <nav class="navbar">
-  <ul>
+  {% block content2 %}
+  <!-- <ul>
     <li><a href="{{url_for('login')}}">Login</a></li>
     <li><a href="{{url_for('signup')}}">Sign Up</a></li>
-  </ul>
+  </ul> -->
+  {% endblock %}
 </nav>
 
 </header>

@@ -1,5 +1,10 @@
 {% extends "base.html" %}
-
+{% block content2 %}
+  <ul>
+    <li><a href="{{url_for('login')}}">Login</a></li>
+    <li><a href="{{url_for('signup')}}">Sign Up</a></li>
+  </ul>
+{% endblock %}
 {% block content %}
  <!-- about section starts   -->
 <section id="project" class="project">

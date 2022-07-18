@@ -1,5 +1,9 @@
 {% extends "base.html" %}
-
+{% block content2 %}
+  <ul>
+    <li><a href="{{url_for('logout')}}">Logout</a></li>
+  </ul>
+{% endblock %}
 {% block content %}
  <!-- about section starts   -->
 <section id="contact" class="contact">
