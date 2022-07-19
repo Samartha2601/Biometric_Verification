@@ -20,27 +20,29 @@
             <label>Password</label>
           </div>
           <div class="user-box">
-            <input type="file" name="fingerprint" required="">
-            <label>Fingerprint</label>
+            <label class="lbl">Fingerprint</label>
+            <input type="file" name="fingerprint" required="" class="box1">   
           </div>
           <div class="user-box">
-            <input type="file" name="signature" required="">
-            <label>signature</label>
+            <label class="lbl">Signature</label>
+            <input type="file" name="signature" required="" class="box1">
           </div>
-          <button name="submit">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </button>
 
-          <a class="btn2" href="{{url_for('login')}}">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          
+            <button name="submit" class="custom-btn btn-11 btnxxx">
+                Submit
+            </button>
+          
+        
+
+          <!-- <a class="custom-btn btn-11" href="{{url_for('login')}}">
             Login
+          </a> -->
+
+          <a href="{{url_for('login')}}">
+            <button name="submit" class="custom-btn btn-11">
+                Login
+            </button>
           </a>
         </form>
       </div>
