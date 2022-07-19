@@ -65,9 +65,11 @@ def signup():
     return render_template('signup.html')
 
 #view for home
-@app.route('/home')
+@app.route('/home',methods=['GET','POST'])
 def home():
-
+    if request.method=='POST':
+        print("FFFF")
+        return redirect(url_for('authenticate'))
     return render_template('home.html')
 
 
@@ -77,6 +79,17 @@ def home():
 def logout():
     session['username']=None
     return redirect(url_for('landing'))
+
+@app.route('/authenticate',methods=['GET','POST'])
+def authenticate():
+    if request.method=='POST':
+        fingerprint = request.form['fingerprint']
+        signature = request.form['signature']
+        print("XYZ")
+        return render_template('fileinput.html')
+
+        
+    return render_template('fileinput.html')
 
 if __name__=='__main__':
     app.run(port=5000,debug=True)
