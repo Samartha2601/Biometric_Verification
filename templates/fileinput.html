@@ -14,17 +14,22 @@
     <div class="form-container">
     
     
-            <form action="/authenticate" method="post">
+            <form action="/authenticate" method="post" enctype="multipart/form-data">
+                
 
                 <div class="inputBox">
-                    <input type="file" name="signature" placeholder="signature"> 
+                    <input type="file" name="fingerprint" required = ""> 
+                    <label>fingerprint</label>
                     <br>
                 </div>
-                    
+
+
                 <div class="inputBox">
-                    <input type="file" name="fingerprint" placeholder="fingerprint"> 
+                    <input type="file" name="signature" required = ""> 
+                    <label>Sign</label>
                     <br>
                 </div>
+    
                     
                 <!-- <div class="inputBox">
                     <input type="text" name="amount" placeholder="Amount"> 

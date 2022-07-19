@@ -5,10 +5,12 @@ from flask import jsonify,request
 import joblib
 import pymongo
 import hashlib
+import os
 from Scripts.mongodb import Users
+from Scripts.get_sim import main
 user=Users()
-
-
+UPLOAD_FOLDER_FIN='D:\mdp_2\Images\Fingerprint'
+UPLOAD_FOLDER_SIG='D:\mdp_2\Images\Signatures'
 # from Scripts.mongodb import *
 # User=p
 # from user import routes
@@ -20,6 +22,9 @@ app=Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.config['SECRET_KEY'] = 'GDtfDCFYjD'
+app.config['UPLOAD_FOLDER_FIN']=UPLOAD_FOLDER_FIN
+app.config['UPLOAD_FOLDER_SIG']=UPLOAD_FOLDER_SIG
+
 
 # landing view
 
@@ -54,12 +59,20 @@ def signup():
     if(request.method == 'POST'):
         username = request.form.get("username","Anonimous")
         password=request.form.get("password","12345678")
+        fingerprint=request.files["fingerprint"]
+        signature=request.files["signature"]
+
         if(user.ifuserexists(username) == 0):
             return "User exists"
-        password
-        if(user.addnewuser(username,password) == 0):
+        fingerprint_path=os.path.join(app.config['UPLOAD_FOLDER_FIN'], fingerprint.filename)
+        signature_path=os.path.join(app.config['UPLOAD_FOLDER_SIG'], signature.filename)
+
+        if(user.addnewuser(username,password,fingerprint_path,signature_path) == 0):
             return "cannot add user"
+        fingerprint.save(fingerprint_path)
+        signature.save(signature_path)
         session['username']='username'
+
         return redirect(url_for('home'))
         return render_template('signup.html')
     return render_template('signup.html')
@@ -82,13 +95,13 @@ def logout():
 
 @app.route('/authenticate',methods=['GET','POST'])
 def authenticate():
-    if request.method=='POST':
-        fingerprint = request.form['fingerprint']
-        signature = request.form['signature']
-        print("XYZ")
-        return render_template('fileinput.html')
-
+    if request.method=='POST' or request.method=='GET':
+        fingerprint = request.files["fingerprint"]
+        signature = request.files["signature"]
         
+        main()
+
+        return render_template('fileinput.html')
     return render_template('fileinput.html')
 
 if __name__=='__main__':
