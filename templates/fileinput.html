@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content2 %}
+  <ul>
+    <li><a href="{{url_for('logout')}}">Logout</a></li>
+  </ul>
+{% endblock %}
+{% block content %}
+ <!-- about section starts   -->
+<section id="contact" class="contact">
+
+<h1 class="heading" style="margin-bottom: 150px;">Transfer Money</h1>
+
+ <div class="row">
+    <div class="form-container">
+    
+    
+            <form action="/authenticate" method="post" enctype="multipart/form-data">
+                
+
+                <div class="inputBox">
+                    <input type="file" name="fingerprint" required = ""> 
+                    <label>fingerprint</label>
+                    <br>
+                </div>
+
+
+                <div class="inputBox">
+                    <input type="file" name="signature" required = ""> 
+                    <label>Sign</label>
+                    <br>
+                </div>
+    
+                    
+                <!-- <div class="inputBox">
+                    <input type="text" name="amount" placeholder="Amount"> 
+                    <br>
+                </div> -->
+            
+
+                
+                <button type="submit" 
+                    style="background-color: var(--color);
+                    color:#fff;
+                    font-size: 16px;
+                    cursor: pointer;
+                    height:4rem; 
+                    width: 10rem;
+                    margin-top: 50px;">
+                    submit</button>
+            </form>
+    </div>
+        
+
+</div>
+
+
+</section>
+ <!-- about section ends  -->
+{% endblock %}
